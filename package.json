@@ -6,9 +6,9 @@
   "homepage": "https://vasylevskaya.github.io/vue-weather-app/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vue-cli-service build && gh-pages -d dist"
+    "build": "vite build",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@material-ui/icons": "^4.11.3",
