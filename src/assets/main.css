@@ -1,0 +1,241 @@
+@import './base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.notification-error {
+  background-color: rgb(239, 68, 68);
+  color: white;
+}
+
+.notification-title-error {
+  background-color: rgb(153, 27, 27);
+}
+
+.weather-app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px 100px;
+  background-color: #90cdf0;
+  transition: 1000ms;
+}
+
+@media (max-width: 1200px) {
+  .weather-app {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .weather-app {
+    padding: 50px 10px;
+  }
+}
+
+.weather-app.is-day {
+  background: linear-gradient(to top right, #2980B9, #6DD5FA, #FFFFFF), url(./sun.png) no-repeat;
+  background-size: cover, auto;
+  background-position: center, top left;
+}
+
+.weather-app.is-night {
+  background: #2980B9;
+  background: linear-gradient(
+    to right,
+    #0a0611, #0a0c22, #0a0611
+  );
+}
+
+.weather-app .btn,
+.weather-app.is-day .btn {
+  background-color: #5296b0;
+  border: 1px solid #5296b0;
+  transition: 500ms;
+  color: white;
+}
+
+.weather-app .btn:hover,
+.weather-app.is-day .btn:hover {
+  background-color: #69b3cf;
+  border-color: #69b3cf;
+}
+
+
+.weather-app.is-night .btn {
+  background-color: #1e1e2e;
+  border: 1px solid #1e1e2e;
+  transition: 500ms;
+  color: white;
+}
+
+.weather-app.is-night .btn:hover {
+  background-color: rgb(39 39 55);
+  border-color: rgb(39 39 55);
+}
+
+.weather-app.is-day .sun {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFD700 40%, #FFA500 70%, #FF8C00 100%);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+  position: relative;
+  margin: 50px auto; /* Center the sun horizontally with some top margin */
+}
+
+.weather-app #stars {
+  opacity: 0;
+  transition: 400ms;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.weather-app.is-night #stars {
+  opacity: 1;
+}
+
+@media (max-width: 641px) {
+  .search-form {
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 641px) {
+  .search-form input {
+   width: 100%;
+  }
+}
+
+.star {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.weather-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 100px;
+}
+
+@media (max-width: 1200px) {
+  .weather-content {
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .weather-content {
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+
+.info-group {
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.weather-app.is-day .info-group {
+  background-color: #0b4e7a78;
+  border: 1px solid #ffffff4d;
+}
+
+.weather-app.is-night .info-group {
+  background-color: #06061b5e;
+  border: 1px solid #313132d1
+}
+
+.cloud {
+  opacity: 0.5;
+}
+
+.cloud img {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none;
+  user-select: none;    
+  pointer-events: none;
+}
+@-webkit-keyframes animCloud {
+  from {
+      -webkit-transform: translateX(100%)
+  }
+  to {
+      -webkit-transform: translateX(-100%)
+  }
+}
+@-moz-keyframes animCloud {
+  from {
+      -moz-transform: translateX(100%)
+  }
+  to {
+      -moz-transform: translateX(-100%)
+  }
+}
+@keyframes animCloud {
+  from {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+      transform: translateX(100%)
+  }
+  to {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      -o-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+}
+.cloud-1 {
+  -webkit-animation: animCloud 20s infinite linear;
+  -moz-animation: animCloud 20s infinite linear;
+  animation: animCloud 20s infinite linear
+}
+.cloud-2 {
+  -webkit-animation: animCloud 40s infinite linear;
+  -moz-animation: animCloud 40s infinite linear;
+  animation: animCloud 40s infinite linear
+}
+.cloud-3 {
+  -webkit-animation: animCloud 60s infinite linear;
+  -moz-animation: animCloud 60s infinite linear;
+  animation: animCloud 60s infinite linear
+}
+.cloud-4 {
+  -webkit-animation: animCloud 80s infinite linear;
+  -moz-animation: animCloud 80s infinite linear;
+  animation: animCloud 80s infinite linear
+}
+
